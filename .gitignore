@@ -32,3 +32,4 @@ Thumbs.db
 .vscode-test/
 .fleet/
 *.iml
+/github-activity
