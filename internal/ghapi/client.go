@@ -40,11 +40,10 @@ func (c *httpClient) UserEvents(ctx context.Context, username string) ([]EventRa
 	if err != nil {
 		return nil, err
 	}
-	// هدرهای لازم برای GitHub API
+
 	req.Header.Set("User-Agent", "github-activity-cli")
 	req.Header.Set("Accept", "application/vnd.github+json")
 
-	// اختیاری: توکن برای بالا بردن rate limit
 	if tok := os.Getenv("GITHUB_TOKEN"); tok != "" {
 		req.Header.Set("Authorization", "Bearer "+tok)
 	}
